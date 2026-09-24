@@ -1,0 +1,11 @@
+.welcome-card {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.welcome-icon {
+  display: block;
+  margin: 0 auto 8px;
+  font-size: 56px;
+  color: var(--ion-color-primary);
+}
