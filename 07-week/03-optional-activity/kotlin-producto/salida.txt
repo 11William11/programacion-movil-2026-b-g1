@@ -1,0 +1,20 @@
+== Productos válidos ==
+Combo crispetas + gaseosa — $18.000 · Para ver la película
+Chocolatina — $3.500 · sin descripción
+
+== Manejo de nulos ==
+Largo de la descripción del combo: 20
+Largo de la descripción de la chocolatina: 0
+
+== Validación: precio negativo ==
+No se creó el producto: El precio debe ser mayor o igual a 0 (llegó -1000.0)
+
+== Datos de un formulario (pueden venir null) ==
+desdeFormulario(Boleta 2D, 12000) -> Boleta 2D — $12.000 · sin descripción
+desdeFormulario(null, 5000) -> null (datos inválidos)
+desdeFormulario(Boleta 3D, abc) -> null (datos inválidos)
+desdeFormulario(Palomitas, -200) -> null (datos inválidos)
+
+== val es de solo lectura; para 'cambiar' se crea una copia ==
+Original:      Combo crispetas + gaseosa — $18.000 · Para ver la película
+Con descuento: Combo crispetas + gaseosa — $16.200 · Para ver la película

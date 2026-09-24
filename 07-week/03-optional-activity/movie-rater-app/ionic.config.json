@@ -1,0 +1,7 @@
+{
+  "name": "movie-rater-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
