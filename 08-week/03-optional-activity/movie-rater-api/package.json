@@ -1,0 +1,21 @@
+{
+  "name": "movie-rater-api",
+  "version": "1.0.0",
+  "description": "Semana 8 · API REST con Express (GET y POST /peliculas) y funciones fetch para consumirla",
+  "main": "src/server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "author": "William Erney Collo Narvaez",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
