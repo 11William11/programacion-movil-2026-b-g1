@@ -1,6 +1,6 @@
 # Movie Rater — App Ionic React + API Express (Semana 9)
 
-Actividad opcional de refuerzo y actividad calificable c2 · Programación Móvil · 2026-B
+Actividad calificable c2 (Corte 2) · Programación Móvil · 2026-B
 **Autor:** William Erney Collo Narvaez (`11William11`)
 
 | Carpeta | Contenido |
