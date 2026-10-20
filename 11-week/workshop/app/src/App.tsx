@@ -1,11 +1,10 @@
 import { Navigate, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
 import MovieDetail from './pages/MovieDetail';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Profile from './pages/Profile';
+import Tabs from './pages/Tabs';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -30,9 +29,9 @@ import '@ionic/react/css/display.css';
  * https://ionicframework.com/docs/theming/dark-mode
  */
 
-/* import '@ionic/react/css/palettes/dark.always.css'; */
+import '@ionic/react/css/palettes/dark.always.css';
 /* import '@ionic/react/css/palettes/dark.class.css'; */
-import '@ionic/react/css/palettes/dark.system.css';
+/* import '@ionic/react/css/palettes/dark.system.css'; */
 
 /* Theme variables */
 import './theme/variables.css';
@@ -45,9 +44,8 @@ const App: React.FC = () => (
       <IonRouterOutlet>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/tabs/*" element={<Tabs />} />
         <Route path="/movie/:id" element={<MovieDetail />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/" element={<Navigate to="/login" replace />} />
       </IonRouterOutlet>
     </IonReactRouter>

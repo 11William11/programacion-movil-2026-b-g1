@@ -12,7 +12,6 @@ import {
   IonImg,
   IonText,
   IonSpinner,
-  IonButton,
 } from '@ionic/react';
 
 import { useState } from 'react';
@@ -60,13 +59,6 @@ const Home: React.FC = () => {
         <IonToolbar>
           <IonTitle>Movie Rater</IonTitle>
 
-           <IonButton
-  slot="end"
-  fill="clear"
-  routerLink="/profile"
->
-  Mi perfil
-</IonButton>
         </IonToolbar>
       </IonHeader>
 

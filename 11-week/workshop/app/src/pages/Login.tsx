@@ -37,7 +37,7 @@ const Login: React.FC = () => {
       localStorage.setItem('token', data.token);
       localStorage.setItem('usuario', JSON.stringify(data.usuario));
 
-      navigate('/home');
+      navigate('/tabs/buscar');
     } catch (err) {
       console.error('Error iniciando sesión:', err);
       setError('Correo o contraseña incorrectos.');

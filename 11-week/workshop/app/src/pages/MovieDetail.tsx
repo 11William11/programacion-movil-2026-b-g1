@@ -89,7 +89,7 @@ const handleSaveReview = async () => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton defaultHref="/home" />
+            <IonBackButton defaultHref="/tabs/buscar" />
           </IonButtons>
 
           <IonTitle>Detalle</IonTitle>

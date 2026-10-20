@@ -1,7 +1,7 @@
 .movie-detail {
   max-width: 700px;
   margin: 0 auto;
-  padding: 20px;
+  padding: var(--mr-space-lg);
 }
 
 .movie-detail-poster {
@@ -17,7 +17,7 @@
 }
 
 .movie-detail h1 {
-  font-size: 28px;
+  font-size: var(--mr-font-size-xl);
   margin-top: 0;
 }
 

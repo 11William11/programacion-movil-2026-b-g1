@@ -1,7 +1,5 @@
 import {
-  IonBackButton,
   IonButton,
-  IonButtons,
   IonCard,
   IonCardContent,
   IonHeader,
@@ -10,7 +8,7 @@ import {
   IonPage,
   IonSpinner,
   IonTextarea,
-  IonText,
+  IonContent,
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
@@ -178,15 +176,11 @@ const Profile: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonButtons slot="start">
-            <IonBackButton defaultHref="/home" />
-          </IonButtons>
-
           <IonTitle>Mi perfil</IonTitle>
         </IonToolbar>
       </IonHeader>
 
-      <IonText>
+      <IonContent fullscreen>
         <div className="profile-container">
           <IonCard>
             <IonCardContent>
@@ -344,7 +338,7 @@ const Profile: React.FC = () => {
             </IonCard>
           ))}
         </div>
-      </IonText>
+      </IonContent>
     </IonPage>
   );
 };

@@ -1,2 +1,66 @@
 /* For information on how to create your own theme, please refer to:
 http://ionicframework.com/docs/theming/ */
+
+/* Tokens de diseño de Movie Rater (tema oscuro). Contrastes en docs/02-design-tokens.md */
+:root {
+  /* Primario: botones principales, pestaña activa, calificación */
+  --ion-color-primary: #f5b82e;
+  --ion-color-primary-rgb: 245, 184, 46;
+  --ion-color-primary-contrast: #000000;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
+  --ion-color-primary-shade: #d8a228;
+  --ion-color-primary-tint: #f6bf43;
+
+  /* Secundario: acciones de apoyo y enlaces */
+  --ion-color-secondary: #7cc4fa;
+  --ion-color-secondary-rgb: 124, 196, 250;
+  --ion-color-secondary-contrast: #000000;
+  --ion-color-secondary-contrast-rgb: 0, 0, 0;
+  --ion-color-secondary-shade: #6dacdc;
+  --ion-color-secondary-tint: #89cafa;
+
+  /* Éxito: reseña guardada */
+  --ion-color-success: #4ade80;
+  --ion-color-success-rgb: 74, 222, 128;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0, 0, 0;
+  --ion-color-success-shade: #41c371;
+  --ion-color-success-tint: #5ce18d;
+
+  /* Error: fallas de red y validación */
+  --ion-color-danger: #ff6b6b;
+  --ion-color-danger-rgb: 255, 107, 107;
+  --ion-color-danger-contrast: #000000;
+  --ion-color-danger-contrast-rgb: 0, 0, 0;
+  --ion-color-danger-shade: #e05e5e;
+  --ion-color-danger-tint: #ff7a7a;
+
+  /* Tamaños de letra (rem para que crezcan con la letra del sistema) */
+  --mr-font-size-sm: 0.875rem;
+  --mr-font-size-md: 1rem;
+  --mr-font-size-lg: 1.25rem;
+  --mr-font-size-xl: 1.75rem;
+
+  /* Espacios */
+  --mr-space-xs: 4px;
+  --mr-space-sm: 8px;
+  --mr-space-md: 16px;
+  --mr-space-lg: 24px;
+  --mr-space-xl: 32px;
+}
+
+/* Fondo y texto: mismo selector que la paleta oscura de Ionic para reemplazarla */
+:root.ios,
+:root.md {
+  --ion-background-color: #121212;
+  --ion-background-color-rgb: 18, 18, 18;
+  --ion-text-color: #f2f2f2;
+  --ion-text-color-rgb: 242, 242, 242;
+  --ion-card-background: #1e1e1e;
+  --ion-item-background: #1e1e1e;
+  --ion-toolbar-background: #1f1f1f;
+  --ion-tab-bar-background: #1f1f1f;
+  --ion-tab-bar-color: #b3b3b3;
+  --ion-tab-bar-color-selected: var(--ion-color-primary);
+  --mr-text-secondary: #b3b3b3;
+}

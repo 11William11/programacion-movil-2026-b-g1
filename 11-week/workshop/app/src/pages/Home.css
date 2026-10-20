@@ -1,0 +1,14 @@
+.home-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--mr-space-md);
+}
+
+.home-container h1 {
+  font-size: var(--mr-font-size-xl);
+  margin: 0 0 var(--mr-space-sm);
+}
+
+.home-container p {
+  color: var(--mr-text-secondary);
+}
