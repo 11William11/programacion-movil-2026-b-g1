@@ -13,6 +13,9 @@ import {
   IonText,
   IonButton,
   IonIcon,
+  IonRefresher,
+  IonRefresherContent,
+  RefresherEventDetail,
 } from '@ionic/react';
 
 import { useState } from 'react';
@@ -53,6 +56,11 @@ const Home: React.FC = () => {
     loadMovies(value);
   };
 
+  const handleRefresh = async (event: CustomEvent<RefresherEventDetail>) => {
+    await loadMovies(query);
+    event.detail.complete();
+  };
+
   const showEmpty = !loading && !error && query.trim() !== '' && movies.length === 0;
 
   return (
@@ -64,6 +72,10 @@ const Home: React.FC = () => {
       </IonHeader>
 
       <IonContent fullscreen className="home-content">
+        <IonRefresher slot="fixed" onIonRefresh={handleRefresh}>
+          <IonRefresherContent pullingText="Desliza para actualizar" />
+        </IonRefresher>
+
         <div className="home-container">
           <IonText>
             <h1>Encuentra una película</h1>
