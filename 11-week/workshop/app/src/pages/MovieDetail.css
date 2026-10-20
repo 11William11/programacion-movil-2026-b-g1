@@ -1,0 +1,37 @@
+.movie-detail {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.movie-detail-poster {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 20px;
+  display: block;
+  border-radius: 12px;
+}
+
+.movie-detail ion-card {
+  margin: 0;
+}
+
+.movie-detail h1 {
+  font-size: 28px;
+  margin-top: 0;
+}
+
+.movie-detail h2 {
+  margin-top: 24px;
+}
+
+.detail-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.detail-error {
+  padding: 20px;
+}

@@ -1,0 +1,41 @@
+.profile-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-container ion-card {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.profile-container h1 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.profile-container h2 {
+  margin-top: 30px;
+}
+
+.profile-container h3 {
+  font-size: 20px;
+}
+
+.profile-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.profile-error {
+  color: var(--ion-color-danger);
+}
+
+.rating-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 12px 0 20px;
+}
