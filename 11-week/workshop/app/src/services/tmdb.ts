@@ -18,12 +18,28 @@ interface MovieSearchResponse {
   total_pages: number;
 }
 
+// Para probar los estados de la lista: /tabs/buscar?retraso=3000 o /tabs/buscar?falla=1
+const simulateNetwork = async () => {
+  const params = new URLSearchParams(window.location.search);
+  const delay = Number(params.get('retraso') ?? 0);
+
+  if (delay > 0) {
+    await new Promise((resolve) => setTimeout(resolve, delay));
+  }
+
+  if (params.get('falla') === '1') {
+    throw new Error('Falla simulada');
+  }
+};
+
 export const searchMovies = async (
   query: string
 ): Promise<Movie[]> => {
   if (!query.trim()) {
     return [];
   }
+
+  await simulateNetwork();
 
   const response = await fetch(
     `${BASE_URL}/search/movie?api_key=${API_KEY}&language=es-ES&query=${encodeURIComponent(query)}`

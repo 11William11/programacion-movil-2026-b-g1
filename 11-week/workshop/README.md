@@ -7,8 +7,8 @@
 - DOCS_REPO: https://github.com/code-corhuila/mr-docs
 - CODE_REPO: https://github.com/code-corhuila/movie-rater
 - BASELINE: app del equipo (`movie-rater-frontend`), rama `develop`, commit `559ed75`
-- REFLECTION_DOC: (pendiente)
-- MY_SCREENS: Home (búsqueda y lista de películas, `/home`), MovieDetail (detalle y reseña, `/movie/:id`)
+- REFLECTION_DOC: https://docs.google.com/document/d/1-p89yy6arSPQPPMa4si2geBKGf4iQlqXC1zdsoiXWwE/edit?usp=sharing
+- MY_SCREENS: Home (búsqueda y lista de películas, `/tabs/buscar`), MovieDetail (detalle y reseña, `/movie/:id`)
 <!-- CONFIG-END -->
 
 ## Línea base

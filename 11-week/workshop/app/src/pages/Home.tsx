@@ -11,11 +11,14 @@ import {
   IonCardContent,
   IonImg,
   IonText,
-  IonSpinner,
+  IonButton,
+  IonIcon,
 } from '@ionic/react';
 
 import { useState } from 'react';
+import { cloudOfflineOutline, filmOutline } from 'ionicons/icons';
 import { searchMovies, Movie } from '../services/tmdb';
+import MovieListSkeleton from '../components/MovieListSkeleton';
 import './Home.css';
 
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
@@ -26,39 +29,37 @@ const Home: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSearch = async (value: string) => {
-    setQuery(value);
-
+  const loadMovies = async (value: string) => {
     if (!value.trim()) {
       setMovies([]);
+      setError('');
       return;
     }
 
     try {
       setLoading(true);
       setError('');
-
-      console.log('Buscando:', value);
-
-      const results = await searchMovies(value);
-
-      console.log('Resultados:', results);
-
-      setMovies(results);
+      setMovies(await searchMovies(value));
     } catch (err) {
       console.error('Error buscando películas:', err);
-      setError('No se pudieron cargar las películas.');
+      setError('No se pudieron cargar las películas. Revisa tu conexión.');
     } finally {
       setLoading(false);
     }
   };
+
+  const handleSearch = (value: string) => {
+    setQuery(value);
+    loadMovies(value);
+  };
+
+  const showEmpty = !loading && !error && query.trim() !== '' && movies.length === 0;
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Movie Rater</IonTitle>
-
         </IonToolbar>
       </IonHeader>
 
@@ -81,52 +82,62 @@ const Home: React.FC = () => {
             }}
           />
 
-          {loading && (
-            <div className="loading">
-              <IonSpinner />
-              <p>Buscando películas...</p>
+          {loading && <MovieListSkeleton filas={3} />}
+
+          {!loading && error && (
+            <div className="home-state" role="alert">
+              <IonIcon icon={cloudOfflineOutline} aria-hidden="true" />
+              <p>{error}</p>
+              <IonButton onClick={() => loadMovies(query)}>
+                Reintentar
+              </IonButton>
             </div>
           )}
 
-          {error && (
-            <IonText color="danger">
-              <p>{error}</p>
-            </IonText>
+          {showEmpty && (
+            <div className="home-state">
+              <IonIcon icon={filmOutline} aria-hidden="true" />
+              <p>No encontramos películas para «{query}».</p>
+              <IonButton fill="outline" onClick={() => handleSearch('')}>
+                Limpiar búsqueda
+              </IonButton>
+            </div>
           )}
 
-          <div className="movie-list">
-            {movies.map((movie) => (
-          <IonCard
-             key={movie.id}
-             button
-             routerLink={`/movie/${movie.id}`}
-           >
+          {!loading && !error && (
+            <div className="movie-list">
+              {movies.map((movie) => (
+                <IonCard
+                  key={movie.id}
+                  button
+                  routerLink={`/movie/${movie.id}`}
+                >
+                  {movie.poster_path && (
+                    <IonImg
+                      src={`${IMAGE_BASE_URL}${movie.poster_path}`}
+                      alt={`Póster de ${movie.title}`}
+                    />
+                  )}
 
-                {movie.poster_path && (
-                  <IonImg
-                    src={`${IMAGE_BASE_URL}${movie.poster_path}`}
-                    alt={`Póster de ${movie.title}`}
-                  />
-                )}
+                  <IonCardHeader>
+                    <IonCardTitle>
+                      {movie.title}
+                    </IonCardTitle>
+                  </IonCardHeader>
 
-                <IonCardHeader>
-                  <IonCardTitle>
-                    {movie.title}
-                  </IonCardTitle>
-                </IonCardHeader>
+                  <IonCardContent>
+                    <p>
+                      {movie.release_date || 'Fecha desconocida'}
+                    </p>
 
-                <IonCardContent>
-                  <p>
-                    {movie.release_date || 'Fecha desconocida'}
-                  </p>
-
-                  <p>
-                    ⭐ {movie.vote_average.toFixed(1)}
-                  </p>
-                </IonCardContent>
-              </IonCard>
-            ))}
-          </div>
+                    <p>
+                      ⭐ {movie.vote_average.toFixed(1)}
+                    </p>
+                  </IonCardContent>
+                </IonCard>
+              ))}
+            </div>
+          )}
         </div>
       </IonContent>
     </IonPage>

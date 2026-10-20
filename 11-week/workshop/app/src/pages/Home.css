@@ -12,3 +12,35 @@
 .home-container p {
   color: var(--mr-text-secondary);
 }
+
+.home-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--mr-space-sm);
+  padding: var(--mr-space-xl) var(--mr-space-md);
+  text-align: center;
+}
+
+.home-state ion-icon {
+  font-size: 3rem;
+  color: var(--mr-text-secondary);
+}
+
+.skeleton-poster {
+  height: 220px;
+  margin: 0;
+}
+
+.skeleton-title {
+  width: 70%;
+  height: 1.4rem;
+}
+
+.skeleton-line {
+  width: 40%;
+}
+
+.skeleton-line.short {
+  width: 25%;
+}
