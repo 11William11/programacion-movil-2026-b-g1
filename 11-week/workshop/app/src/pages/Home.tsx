@@ -143,7 +143,7 @@ const Home: React.FC = () => {
                     </p>
 
                     <p>
-                      ⭐ {movie.vote_average.toFixed(1)}
+                      <span aria-hidden="true">⭐</span> Calificación TMDB: {movie.vote_average.toFixed(1)} de 10
                     </p>
                   </IonCardContent>
                 </IonCard>

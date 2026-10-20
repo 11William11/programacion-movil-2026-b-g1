@@ -44,3 +44,15 @@
 .skeleton-line.short {
   width: 25%;
 }
+
+@media (min-width: 768px) {
+  .movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--mr-space-md);
+  }
+
+  .movie-list ion-card {
+    margin: 0;
+  }
+}

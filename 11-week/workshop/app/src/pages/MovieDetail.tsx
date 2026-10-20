@@ -131,7 +131,7 @@ const handleSaveReview = async () => {
 
                 <p>
                   <strong>Calificación TMDB:</strong>{' '}
-                  ⭐ {movie.vote_average.toFixed(1)}
+                  <span aria-hidden="true">⭐</span> {movie.vote_average.toFixed(1)} de 10
                 </p>
 
                 <h2>Sinopsis</h2>
@@ -141,17 +141,23 @@ const handleSaveReview = async () => {
                 </p>
                 <h2>Tu calificación</h2>
 
-<div className="rating-buttons">
+<div className="rating-buttons" role="group" aria-label="Tu calificación">
   {[1, 2, 3, 4, 5].map((value) => (
     <IonButton
       key={value}
       fill={rating === value ? 'solid' : 'outline'}
+      aria-pressed={rating === value}
+      aria-label={`${value} de 5 estrellas`}
       onClick={() => setRating(value)}
     >
-      {value} ⭐
+      {value} <span aria-hidden="true">⭐</span>
     </IonButton>
   ))}
 </div>
+
+<p className="rating-selected">
+  {rating > 0 ? `Seleccionaste ${rating} de 5 estrellas.` : 'Aún no has elegido una calificación.'}
+</p>
 
 <IonItem>
   <IonLabel position="stacked">

@@ -35,3 +35,18 @@
 .detail-error {
   padding: 20px;
 }
+
+.rating-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--mr-space-xs);
+}
+
+.rating-buttons ion-button {
+  min-height: 48px;
+  min-width: 48px;
+}
+
+.rating-selected {
+  color: var(--mr-text-secondary);
+}
