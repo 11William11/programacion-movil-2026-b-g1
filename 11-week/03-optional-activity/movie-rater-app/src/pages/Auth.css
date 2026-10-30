@@ -1,0 +1,18 @@
+.auth-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.auth-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-container ion-item {
+  margin-bottom: 16px;
+}
+
+.auth-container ion-button {
+  margin-top: 16px;
+}
