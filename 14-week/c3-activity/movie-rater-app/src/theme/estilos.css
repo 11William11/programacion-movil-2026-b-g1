@@ -1,0 +1,51 @@
+/* Estados vacío y de error: centrados, con icono grande y botón de acción */
+.estado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 22rem;
+  margin: 3rem auto 0;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.estado h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.estado p {
+  margin: 0 0 0.5rem;
+  color: var(--ion-color-medium);
+}
+
+.estado-icono {
+  font-size: 3.5rem;
+}
+
+/* Franja de "sin conexión": color de advertencia con texto oscuro (contraste 4.5:1 o más) */
+.aviso-conexion {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--ion-color-warning);
+  color: #1f1f1f;
+  font-size: 0.9rem;
+}
+
+.aviso-conexion ion-icon {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+
+/* Chip del permiso de ubicación */
+.permiso {
+  margin: 0 0 1rem;
+}
+
+/* Datos del perfil y de la ubicación con números alineados */
+.valor {
+  font-variant-numeric: tabular-nums;
+}
